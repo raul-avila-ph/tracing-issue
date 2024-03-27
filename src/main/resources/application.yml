@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: demo
+
+management:
+  tracing:
+    propagation:
+      type: b3, b3_multi
+
+
+demo:
+  feign:
+    url: http://localhost:${wiremock.server.port}
+
+logging:
+  level:
+    com.example.demo.MyFeignClient: DEBUG
+    feign: DEBUG
